@@ -1,0 +1,60 @@
+trame n°2 : $GPGGA,091538.464,,,,,0,00,,,M,0.0,M,,0000*56
+heure : 91538.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:38, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°5 : $GPGGA,091539.460,,,,,0,00,,,M,0.0,M,,0000*53
+heure : 91539.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:39, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°8 : $GPGGA,091540.460,,,,,0,00,,,M,0.0,M,,0000*5D
+heure : 91540.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:40, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°11 : $GPGGA,091541.464,,,,,0,00,,,M,0.0,M,,0000*58
+heure : 91541.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:41, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°14 : $GPGGA,091542.460,,,,,0,00,,,M,0.0,M,,0000*5F
+heure : 91542.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:42, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°20 : $GPGGA,091543.460,,,,,0,00,,,M,0.0,M,,0000*5E
+heure : 91543.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:43, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°23 : $GPGGA,091544.464,,,,,0,00,,,M,0.0,M,,0000*5D
+heure : 91544.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:44, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°26 : $GPGGA,091545.460,,,,,0,00,,,M,0.0,M,,0000*58
+heure : 91545.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:45, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°29 : $GPGGA,091546.460,,,,,0,00,,,M,0.0,M,,0000*5B
+heure : 91546.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:46, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°32 : $GPGGA,091547.464,,,,,0,00,,,M,0.0,M,,0000*5E
+heure : 91547.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:47, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°38 : $GPGGA,091548.464,,,,,0,00,,,M,0.0,M,,0000*51
+heure : 91548.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:48, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°41 : $GPGGA,091549.464,,,,,0,00,,,M,0.0,M,,0000*50
+heure : 91549.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:49, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°44 : $GPGGA,091550.464,,,,,0,00,,,M,0.0,M,,0000*58
+heure : 91550.464, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:50, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°47 : $GPGGA,091551.460,,,,,0,00,,,M,0.0,M,,0000*5D
+heure : 91551.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:51, latitude : 0.000, NS : 00, longitude : 0.000
+
+trame n°50 : $GPGGA,091552.460,,,,,0,00,,,M,0.0,M,,0000*5E
+heure : 91552.460, latitude : 0.000, NS : 00, longitude : 0.000
+heure : 9:15:52, latitude : 0.000, NS : 00, longitude : 0.000
+
