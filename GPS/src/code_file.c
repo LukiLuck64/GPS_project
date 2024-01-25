@@ -13,7 +13,8 @@ gcc code_file.c -o trame_gps -lm
 ./trame_gps
 */
 
-int main()
+
+int main(int argc, char* argv[])
 {
     FILE *gps_device;
     FILE *fichierDonnees = fopen("donnees.nmea", "w");
@@ -22,9 +23,12 @@ int main()
     char str[256];
     char reponse = 'a';
     int bytesRead, ch, nb_trame=0;
+    double lat_lon[2][NB_TRAME];
+    double dist_km=0;
+    
 
-    gps_device = fopen("/dev/ttyUSB0", "r");
-    //gps_device = fopen("/home/luc/Documents/Esix/GPS/sauvegarde.txt", "r");
+    //gps_device = fopen("/dev/ttyUSB0", "r");
+    gps_device = fopen("/home/luc/Documents/Esix/GPS_project/GPS/src/output.txt", "r");
 
     // Vérifiez si l'ouverture du fichier a réussi
     if (gps_device == NULL) {
@@ -45,15 +49,28 @@ int main()
         fprintf(fichierDonnees, "%s\n", str);
 
         // Traitement des données gps
-        analyse_gps(str, fichierDonneesGPS, nb_trame); 
+        analyse_gps(str, fichierDonneesGPS, nb_trame, lat_lon); 
 
         // Nettoyage str
         memset(str, 0, sizeof(str));
 
         // 50 trames récupérées
-        if(nb_trame==50){
+        if(nb_trame==10){
+
+            for(int j=0;j<NB_TRAME;j++){
+                for(int i=0;i<NB_TRAME;i++){
+                    dist_km = distance_haversine(lat_lon[0][j], lat_lon[1][j], lat_lon[0][i], lat_lon[1][i]);
+                    if((dist_km <= atoi(argv[1])) & (dist_km != 0)){
+                    printf("proche de %.2f km   | ", dist_km);
+                    printf("coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",lat_lon[0][j], lat_lon[1][j], lat_lon[0][i], lat_lon[1][i]);
+                    }
+                }
+            }
+
             break;
         }
+
+        
         
     }
 
@@ -64,9 +81,11 @@ int main()
     double lat2 = 34.052235; // Latitude de Los Angeles
     double lon2 = -118.243683; // Longitude de Los Angeles
 
+    lat1=49.288333; lon1=0.463889; lat2=49.289444; lon2=0.486944;
+
     double dist = distance_haversine(lat1, lon1, lat2, lon2);
 
-    printf("Distance entre San Francisco et Los Angeles : %.2f km\n", dist);
+    //printf("Distance entre San Francisco et Los Angeles : %.2f km\n", dist);
     
     // // Exemple d'utilisation de la fonction de Vincenty
     //double distance = distance_vincenty(lat1, lon1, lat2, lon2);
@@ -78,8 +97,7 @@ int main()
     fclose(fichierDonneesGPS);
     fclose(gps_device);
 
-    //system("./nmea_to_gpx.bash output.nmea");
-
+    system("./nmea_to_gpx.bash donnees.nmea");
 
     return 0;
 }
