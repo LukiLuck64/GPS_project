@@ -152,7 +152,6 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    strcpy(str_copy, str);
    token = strtok(str, s); 		/* get the first token */
 
-   printf("%s\n",token);
 
    if((token == NULL)||(str_copy == NULL)){
       
@@ -165,6 +164,7 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
       decode_GGA(s,fichierDonneesGPS, lat_lon);
       
    }
+
    if(strcmp(token,"$GPRMC")==0){
       token = strtok(NULL, s);
       token = strtok(NULL, s);
@@ -180,7 +180,10 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    if(strcmp(token,"$GPGLL")==0){
       token = strtok(NULL, s);
       token = strtok(NULL, s);
-      printf("%s\n",token);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
       if(strcmp(token,"A")==0){
          token = strtok(str_copy, s);
          fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
@@ -188,7 +191,7 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
       }
    }
 
-
+   
    free(str_copy);
 
 }

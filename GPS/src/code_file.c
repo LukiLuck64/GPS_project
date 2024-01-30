@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
         memset(str, 0, sizeof(str));
 
         // 50 trames récupérées
-        if(nb_trame==10){
+        if(nb_trame==14){
 
             // for(int j=0;j<NB_TRAME;j++){
             //     for(int i=0;i<NB_TRAME;i++){

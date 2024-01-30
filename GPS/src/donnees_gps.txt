@@ -1,0 +1,45 @@
+trame n°1 : $GPGLL
+latitude : 49.186, NS : N, longitude : -0.360, WE : W,  heure : 123519.000
+heure : 12.000, minute : 35.000, seconde : 19.000
+latitude : 0.868, NS : N, longitude : -0.100, WE : W, heure : 12:35:19
+
+trame n°2 : $GPGLL
+latitude : 49.184, NS : N, longitude : -0.359, WE : W,  heure : 123713.000
+heure : 12.000, minute : 37.000, seconde : 13.000
+latitude : 0.868, NS : N, longitude : -0.100, WE : W, heure : 12:37:13
+
+trame n°3 : $GPGLL
+latitude : 49.184, NS : N, longitude : -0.356, WE : W,  heure : 123810.000
+heure : 12.000, minute : 38.000, seconde : 10.000
+latitude : 0.868, NS : N, longitude : -0.099, WE : W, heure : 12:38:10
+
+trame n°4 : $GPGLL
+latitude : 49.180, NS : N, longitude : -0.364, WE : W,  heure : 124011.000
+heure : 12.000, minute : 40.000, seconde : 11.000
+latitude : 0.867, NS : N, longitude : -0.101, WE : W, heure : 12:40:11
+
+trame n°5 : $GPGLL
+latitude : 49.180, NS : N, longitude : -0.364, WE : W,  heure : 124111.000
+heure : 12.000, minute : 41.000, seconde : 11.000
+latitude : 0.867, NS : N, longitude : -0.101, WE : W, heure : 12:41:11
+
+trame n°6 : $GPGLL
+latitude : 49.180, NS : N, longitude : -0.364, WE : W,  heure : 124211.000
+heure : 12.000, minute : 42.000, seconde : 11.000
+latitude : 0.867, NS : N, longitude : -0.101, WE : W, heure : 12:42:11
+
+trame n°7 : $GPGLL
+latitude : 49.180, NS : N, longitude : -0.364, WE : W,  heure : 124311.000
+heure : 12.000, minute : 43.000, seconde : 11.000
+latitude : 0.867, NS : N, longitude : -0.101, WE : W, heure : 12:43:11
+
+trame n°9 : $GPGLL
+latitude : 49.180, NS : N, longitude : -0.364, WE : W,  heure : 124711.000
+heure : 12.000, minute : 47.000, seconde : 11.000
+latitude : 0.867, NS : N, longitude : -0.101, WE : W, heure : 12:47:11
+
+trame n°10 : $GPGLL
+latitude : 49.180, NS : N, longitude : -0.364, WE : W,  heure : 125211.000
+heure : 12.000, minute : 52.000, seconde : 11.000
+latitude : 0.867, NS : N, longitude : -0.101, WE : W, heure : 12:52:11
+
