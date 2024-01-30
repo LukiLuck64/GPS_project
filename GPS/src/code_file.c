@@ -57,15 +57,15 @@ int main(int argc, char* argv[])
         // 50 trames récupérées
         if(nb_trame==10){
 
-            for(int j=0;j<NB_TRAME;j++){
-                for(int i=0;i<NB_TRAME;i++){
-                    dist_km = distance_haversine(lat_lon[0][j], lat_lon[1][j], lat_lon[0][i], lat_lon[1][i]);
-                    if((dist_km <= atoi(argv[1])) & (dist_km != 0)){
-                    printf("proche de %.2f km   | ", dist_km);
-                    printf("coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",lat_lon[0][j], lat_lon[1][j], lat_lon[0][i], lat_lon[1][i]);
-                    }
-                }
-            }
+            // for(int j=0;j<NB_TRAME;j++){
+            //     for(int i=0;i<NB_TRAME;i++){
+            //         dist_km = distance_haversine(lat_lon[0][j], lat_lon[1][j], lat_lon[0][i], lat_lon[1][i]);
+            //         if((dist_km <= atoi(argv[1])) & (dist_km != 0)){
+            //         printf("proche de %.2f km   | ", dist_km);
+            //         printf("coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",lat_lon[0][j], lat_lon[1][j], lat_lon[0][i], lat_lon[1][i]);
+            //         }
+            //     }
+            // }
 
             break;
         }
@@ -75,17 +75,17 @@ int main(int argc, char* argv[])
     }
 
     // Exemple d'utilisation de la fonction
-    double lat1 = 37.809326; // Latitude de San Francisco
-    double lon1 = -122.409981; // Longitude de San Francisco
+    // double lat1 = 37.809326; // Latitude de San Francisco
+    // double lon1 = -122.409981; // Longitude de San Francisco
 
-    double lat2 = 34.052235; // Latitude de Los Angeles
-    double lon2 = -118.243683; // Longitude de Los Angeles
+    // double lat2 = 34.052235; // Latitude de Los Angeles
+    // double lon2 = -118.243683; // Longitude de Los Angeles
 
-    lat1=49.288333; lon1=0.463889; lat2=49.289444; lon2=0.486944;
+    // lat1=49.288333; lon1=0.463889; lat2=49.289444; lon2=0.486944;
 
-    double dist = distance_haversine(lat1, lon1, lat2, lon2);
+    // double dist = distance_haversine(lat1, lon1, lat2, lon2);
 
-    printf("Distance entre San Francisco et Los Angeles : %.2f km\n", dist);
+    // printf("Distance entre San Francisco et Los Angeles : %.2f km\n", dist);
     
     // // Exemple d'utilisation de la fonction de Vincenty
     //double distance = distance_vincenty(lat1, lon1, lat2, lon2);
@@ -97,7 +97,7 @@ int main(int argc, char* argv[])
     fclose(fichierDonneesGPS);
     fclose(gps_device);
 
-    system("./nmea_to_gpx.bash donnees.nmea");
+    //system("./nmea_to_gpx.bash donnees.nmea");
 
     return 0;
 }

@@ -127,7 +127,7 @@ void decode_GPRMC(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_T
    longitude[1] = init_long_or_lat(longitude[0]);
    latitude[1] = init_long_or_lat(latitude[0]);
 
-   fprintf(fichierDonneesGPS, "latitude : %0.3lf, NS : %s, longitude : %0.3lf, WE : %s, heure : %0.3lf\n\n", latitude[LA_LO_NEW], NS, longitude[LA_LO_NEW], WE, heure);
+   fprintf(fichierDonneesGPS, "latitude : %0.3lf, NS : %s, longitude : %0.3lf, WE : %s, heure : %0.0lf:%0.0lf:%0.0lf\n\n", latitude[LA_LO_NEW], NS, longitude[LA_LO_NEW], WE, temps[0],temps[1],temps[2]);
    //free(NS);
    //free(WE);
 
@@ -152,6 +152,8 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    strcpy(str_copy, str);
    token = strtok(str, s); 		/* get the first token */
 
+   printf("%s\n",token);
+
    if((token == NULL)||(str_copy == NULL)){
       
       exit(1);
@@ -166,6 +168,9 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    if(strcmp(token,"$GPRMC")==0){
       token = strtok(NULL, s);
       token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
       if(strcmp(token,"A")==0){
          fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
          decode_GPRMC(s,fichierDonneesGPS, lat_lon);
@@ -175,9 +180,7 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    if(strcmp(token,"$GPGLL")==0){
       token = strtok(NULL, s);
       token = strtok(NULL, s);
-      token = strtok(NULL, s);
-      token = strtok(NULL, s);
-      token = strtok(NULL, s);
+      printf("%s\n",token);
       if(strcmp(token,"A")==0){
          token = strtok(str_copy, s);
          fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
