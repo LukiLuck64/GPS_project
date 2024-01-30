@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     
 
     //gps_device = fopen("/dev/ttyUSB0", "r");
-    gps_device = fopen("/home/luc/Documents/Esix/GPS_project/GPS/src/output.txt", "r");
+    gps_device = fopen("/media/21902988/Z/GPS_project/GPS/src/output.txt", "r");
 
     // Vérifiez si l'ouverture du fichier a réussi
     if (gps_device == NULL) {
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
 
     double dist = distance_haversine(lat1, lon1, lat2, lon2);
 
-    //printf("Distance entre San Francisco et Los Angeles : %.2f km\n", dist);
+    printf("Distance entre San Francisco et Los Angeles : %.2f km\n", dist);
     
     // // Exemple d'utilisation de la fonction de Vincenty
     //double distance = distance_vincenty(lat1, lon1, lat2, lon2);

@@ -172,6 +172,19 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
       }
    }
 
+   if(strcmp(token,"$GPGLL")==0){
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      token = strtok(NULL, s);
+      if(strcmp(token,"A")==0){
+         token = strtok(str_copy, s);
+         fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
+         decode_GPRMC(s,fichierDonneesGPS, lat_lon);
+      }
+   }
+
 
    free(str_copy);
 
