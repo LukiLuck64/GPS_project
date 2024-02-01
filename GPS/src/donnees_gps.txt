@@ -1,59 +1,69 @@
-trame n°2 : $GPGLL
+trame n°1 : GPGLL,49.185852,N,-0.360419,W,123519,A,0504199
+latitude : 49.185852, NS : N, longitude : -0.360419, WE : W,  heure : 123519.000
+heure : 12.000, minute : 35.000, seconde : 19.000
+latitude : 49.185852, NS : N, longitude : -0.360419, WE : W, heure : 12:35:19
+
+trame n°2 : $GPGLL,49.184092,N,-0.359496,W,123713,A,0504199
 latitude : 49.184092, NS : N, longitude : -0.359496, WE : W,  heure : 123713.000
 heure : 12.000, minute : 37.000, seconde : 13.000
 latitude : 49.184092, NS : N, longitude : -0.359496, WE : W, heure : 12:37:13
 
-trame n°3 : $GPGLL
+trame n°3 : $GPGLL,49.183706,N,-0.356266,W,123810,A,0504199
 latitude : 49.183706, NS : N, longitude : -0.356266, WE : W,  heure : 123810.000
 heure : 12.000, minute : 38.000, seconde : 10.000
 latitude : 49.183706, NS : N, longitude : -0.356266, WE : W, heure : 12:38:10
 
-trame n°4 : $GPGLL
+trame n°4 : $GPGLL,49.179880,N,-0.363955,W,124011,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124011.000
 heure : 12.000, minute : 40.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:40:11
 
-trame n°5 : $GPGLL
+trame n°5 : $GPGLL,49.179880,N,-0.363955,W,124111,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124111.000
 heure : 12.000, minute : 41.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:41:11
 
-trame n°6 : $GPGLL
+trame n°6 : $GPGLL,49.179880,N,-0.363955,W,124211,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124211.000
 heure : 12.000, minute : 42.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:42:11
 
-trame n°7 : $GPGLL
+trame n°7 : $GPGLL,49.179880,N,-0.363955,W,124311,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124311.000
 heure : 12.000, minute : 43.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:43:11
 
-trame n°9 : $GPGLL
+trame n°8 : $GPGLL,49.179880,N,-0.363955,W,124411,A,0504199
+latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124411.000
+heure : 12.000, minute : 44.000, seconde : 11.000
+latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:44:11
+
+trame n°9 : $GPGLL,49.179880,N,-0.363955,W,124711,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124711.000
 heure : 12.000, minute : 47.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:47:11
 
-trame n°10 : $GPGLL
+trame n°10 : $GPGLL,49.179880,N,-0.363955,W,125211,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 125211.000
 heure : 12.000, minute : 52.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:52:11
 
-trame n°11 : $GPGLL
+trame n°11 : $GPGLL,49.179880,N,-0.363955,W,125411,A,0504199
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 125411.000
 heure : 12.000, minute : 54.000, seconde : 11.000
 latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:54:11
 
-trame n°12 : $GPGLL
+trame n°12 : $GPGLL,49.179179,N,-0.363955,W,125507,A,0504199
 latitude : 49.179179, NS : N, longitude : -0.363955, WE : W,  heure : 125507.000
 heure : 12.000, minute : 55.000, seconde : 7.000
 latitude : 49.179179, NS : N, longitude : -0.363955, WE : W, heure : 12:55:7
 
-trame n°13 : $GPGLL
+trame n°13 : $GPGLL,49.177734,N,-0.364911,W,125804,A,0504199
 latitude : 49.177734, NS : N, longitude : -0.364911, WE : W,  heure : 125804.000
 heure : 12.000, minute : 58.000, seconde : 4.000
 latitude : 49.177734, NS : N, longitude : -0.364911, WE : W, heure : 12:58:4
 
-trame n°14 : $GPGLL
+trame n°14 : $GPGLL,49.176908,N,-0.363702,W,130317,A,0504199
 latitude : 49.176908, NS : N, longitude : -0.363702, WE : W,  heure : 130317.000
 heure : 13.000, minute : 3.000, seconde : 17.000
 latitude : 49.176908, NS : N, longitude : -0.363702, WE : W, heure : 13:3:17

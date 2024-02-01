@@ -39,14 +39,32 @@ double distance_haversine(double lat1, double lon1, double lat2, double lon2) {
    return distance;
 }
 
+// Fonction pour calculer la différence entre deux moments en temps
+void timeDif(double* temps1, double* temps2, double difference[3]){
+      
+   // Convertir les heures, minutes et secondes en secondes
+   int totalSeconds1 = temps1[0] * 3600 + temps1[1] * 60 + temps1[2];
+   int totalSeconds2 = temps2[0] * 3600 + temps2[1] * 60 + temps2[2];
+
+   // Calculer la différence en secondes
+   int differenceInSeconds = totalSeconds1 - totalSeconds2;
+
+   // Convertir la différence en heures, minutes et secondes
+   difference[0] = differenceInSeconds / 3600;
+   differenceInSeconds %= 3600;
+   difference[1] = differenceInSeconds / 60;
+   difference[2] = differenceInSeconds%60;
+}
+
+
 
 void init_heure(double heure, double* temps){
-
+   
    temps[0]=((int)heure/10000);
    temps[1]=(int)(((heure/10000)-temps[0])*100);
    temps[2]=((((heure/10000)-temps[0])*100)-temps[1])*100;
-
 }
+
 
 double init_long_or_lat(double longitude){
 
@@ -123,6 +141,8 @@ void decode_GPRMC(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_T
    heure = atof(strtok(NULL,s));
 
    fprintf(fichierDonneesGPS, "latitude : %0.6lf, NS : %s, longitude : %0.6lf, WE : %s,  heure : %0.3lf\n", latitude[LA_LO_OLD], NS, longitude[LA_LO_OLD], WE, heure);
+   
+   // initialise l'heure
    init_heure(heure, temps[index_trame]); // initialisation de l'heure
 
    fprintf(fichierDonneesGPS, "heure : %0.3lf, minute : %0.3lf, seconde : %0.3lf\n", temps[index_trame][0],temps[index_trame][1],temps[index_trame][2]);
@@ -143,8 +163,6 @@ void decode_GPRMC(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_T
    lat_lon[1][index_trame]=longitude[LA_LO_NEW];
 
    index_trame++;
-   
-
 
 }
 
@@ -157,7 +175,6 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    char *token;
    char *str_copy;
    str_copy = malloc(strlen(str)*sizeof(char));
-
    strcpy(str_copy, str);
    token = strtok(str, s); 		/* get the first token */
 
@@ -185,8 +202,7 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
          decode_GPRMC(s,fichierDonneesGPS, lat_lon, temps);
       }
    }
-
-   if(strcmp(token,"$GPGLL")==0){
+   if((strcmp(token,"$GPGLL")==0)|(strcmp(token,"GPGLL")==0)){
       token = strtok(NULL, s);
       token = strtok(NULL, s);
       token = strtok(NULL, s);
@@ -194,7 +210,8 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
       token = strtok(NULL, s);
       token = strtok(NULL, s);
       if(strcmp(token,"A")==0){
-         token = strtok(str_copy, s);
+         strcpy(str, str_copy);
+         token = strtok(str, s);
          fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
          decode_GPRMC(s,fichierDonneesGPS, lat_lon, temps);
       }

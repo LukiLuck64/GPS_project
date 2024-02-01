@@ -26,10 +26,11 @@ int main(int argc, char* argv[])
     double lat_lon[2][NB_TRAME];
     double dist_km=0, dist_tot=0;
     double temps[NB_TRAME][3];
+    double temps_total[3];
 
     
     //gps_device = fopen("/dev/ttyUSB0", "r");
-    gps_device = fopen("/media/21902988/Z/GPS_project/GPS/src/output.txt", "r");
+    gps_device = fopen("/home/luc/Documents/GPS_project/GPS/src/output.txt", "r");
 
     // Vérifiez si l'ouverture du fichier a réussi
     if (gps_device == NULL) {
@@ -72,8 +73,10 @@ int main(int argc, char* argv[])
         //printf("dist %lf\n , coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",dist_km, lat_lon[0][j], lat_lon[1][j], lat_lon[0][j+1], lat_lon[1][j+1]);
         dist_tot = dist_tot + dist_km;
     }
-    printf("%lf:%lf:%lf\n\n", temps[NB_TRAME][0],temps[NB_TRAME][1],temps[NB_TRAME][3]);
-     printf("distance total %lf km\n heure total %lf:%lf:%lf",dist_tot,temps[NB_TRAME-2][0]-temps[0][0],temps[NB_TRAME-2][1]-temps[0][1],temps[NB_TRAME-2][2]-temps[0][2]);
+  
+    timeDif(temps[NB_TRAME-1],temps[0],temps_total);
+
+    printf("Distance total : %4.0lf m\nTemps total : %0.0lf:%0.0lf:%0.0lf \n",dist_tot*1000,temps_total[0],temps_total[1],temps_total[2]);
 
         
 
