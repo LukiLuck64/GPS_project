@@ -1,4 +1,4 @@
-trame n°1 : GPGLL,49.185852,N,-0.360419,W,123519,A,0504199
+trame n°1 : $GPGLL,49.185852,N,-0.360419,W,123519,A,0504199
 latitude : 49.185852, NS : N, longitude : -0.360419, WE : W,  heure : 123519.000
 heure : 12.000, minute : 35.000, seconde : 19.000
 latitude : 49.185852, NS : N, longitude : -0.360419, WE : W, heure : 12:35:19

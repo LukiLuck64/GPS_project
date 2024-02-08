@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "math.h": "c",
+        "fonction_analyse_gps.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c"
+    }
+}
