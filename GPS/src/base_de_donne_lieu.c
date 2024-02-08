@@ -3,7 +3,8 @@
 #include <string.h>
 
 
-#define NOMBRE_DE_LIEU 1
+#define LONGUEUR_CHAINE_CHARACTERE 50
+
 
 
 typedef struct Lieu Lieu;
@@ -14,11 +15,63 @@ struct Lieu{
 };
 
 
+
+/*
+    parametre : void
+    retourne : un pointeur de la structure Lieu
+
+    ex:
+    getListeLieu[0].identifiant                  retourne l'identifiant du lieu 0
+    getListeLieu[3].nom                          retourne le nom du lieu 3
+    getListeLieu[6].nombre_de_points             retourne le nombre de points du lieu 6
+*/
+Lieu* getListeLieu(void);
+
+
+
+
+
+/*
+    parametre : identifiant du lieu
+    retourne : un pointeur avec la liste des lieu
+
+    ex:
+    getPoints(1)[0][3]     retourne la latitude du point 3, du lieu avec l'identifiant 1
+    getPoints(3)[1][5]     retourne la longitude du point 5, du lieu avec l'identifiant 3
+*/
 double** getPoints(int);
 
 
 
 int main(){
+    Lieu* ma_liste_lieu;
+
+    ma_liste_lieu = getListeLieu();
+
+    // Test:
+    printf("Lieux 1: \n");
+    printf("identifiant : %d\r\n", ma_liste_lieu[1].identifiant);
+    printf("nom : %s\r\n", ma_liste_lieu[1].nom);
+    printf("nombre_de_points : %d\n\n", ma_liste_lieu[1].nombre_de_points);
+
+
+    double** mes_points;
+
+    mes_points = getPoints(1);
+    // Test:
+    printf("Lieux 1: \n");
+    printf("latitude point 0: %lf\n\n", mes_points[0][0]);
+    printf("longitude point 3: %lf\n\n", mes_points[1][3]);
+    
+    return 0;
+}
+
+
+
+
+
+
+Lieu* getListeLieu(void){
     Lieu* liste_lieu = NULL;
     Lieu nouveau_lieu;
 
@@ -29,15 +82,15 @@ int main(){
 
 
 
-    int taille;
-    char *nomLieu;
+    int nombre_de_lieu = 0;
+    char *pointeur_premier_ligne = NULL;                           // Pointeur utilisé récupéré à chaque ligne
 
-    char donnees_txt [30];       // Tram récupéré
-    const char s[2] = ",";  // Séparateur
+    char donnees_txt [LONGUEUR_CHAINE_CHARACTERE];          // Tram récupéré
+    const char s[2] = ",";                                  // Séparateur
 
 
 
-    liste_lieu = malloc(NOMBRE_DE_LIEU * sizeof(Lieu));
+    
 
 
 
@@ -48,126 +101,129 @@ int main(){
 
     if ( fichier_liste_lieux == NULL ) {
         printf("erreur d'ouverture du fichier fichier_liste_lieux");    
+        exit(0);
     }
 
-
-    
-
-    for(int i=0; i<NOMBRE_DE_LIEU; i++){
-        // Recupération donne liste lieux (.txt)
-        if(fichier_liste_lieux != NULL){
-            fgets(donnees_txt, 30, fichier_liste_lieux);
-        }
+    else{
         
-
-        // Ajout identifiant
-        nouveau_lieu.identifiant = i;
-
-
-        // Ajout nom lieu
-        //strcpy(nomLieu, "chateau");
-        nomLieu = strtok(donnees_txt, s);
-        nouveau_lieu.nom = malloc(strlen(nomLieu) * sizeof(char));
-        printf("nomLieu : %s\r\n", nomLieu);
-
-        strcpy(nouveau_lieu.nom, nomLieu);
+        while(fgets(donnees_txt, LONGUEUR_CHAINE_CHARACTERE, fichier_liste_lieux) != NULL){
+            nombre_de_lieu++;
+        }
+        // On replace le curseur au debut du fichier
+        rewind(fichier_liste_lieux);
+        liste_lieu = malloc(nombre_de_lieu * sizeof(Lieu));
+        nombre_de_lieu = 0;
 
 
-        // Ajout nombre de points
-        //nouveau_lieu.nombre_de_points = 16;
-        nouveau_lieu.nombre_de_points = atoi(strtok(NULL, s));
+        // Recupération de la liste des lieux (fichier .txt)
+        while(fgets(donnees_txt, LONGUEUR_CHAINE_CHARACTERE, fichier_liste_lieux)){       
+
+            if(donnees_txt != NULL){
+                pointeur_premier_ligne = strtok(donnees_txt, s);
+                //printf("\ntest :%s\n", donnees_txt);
+
+                // Ajout nom lieu
+                nouveau_lieu.nom = malloc(strlen(pointeur_premier_ligne) * sizeof(char));
+                strcpy(nouveau_lieu.nom, pointeur_premier_ligne);   // Copie du nom du lieu
+
+                //printf("nomLieu : %s\r\n", nouveau_lieu.nom);
 
 
-        // AJout lieu à la liste des lieux
-        liste_lieu[i] = nouveau_lieu;
+
+                // Ajout nombre de points
+                nouveau_lieu.nombre_de_points = atoi(strtok(NULL, s));
+                //printf("nb points : %d\r\n", nouveau_lieu.nombre_de_points);
 
 
-        /*         fichier_lieu = fopen(strcat(nouveau_lieu.nom, ".txt"), "r");
-        if ( fichier_lieu == NULL ) {
-            printf("erreur d'ouverture du fichier");    
-        }    */
+
+
+
+                // Ajout identifiant
+                nouveau_lieu.identifiant = nombre_de_lieu;
+                //printf("ID lieu : %d\n\n", nouveau_lieu.identifiant);
+                
+
+                // AJout lieu à la liste des lieux
+                liste_lieu[nombre_de_lieu] = nouveau_lieu;
+
+                nombre_de_lieu ++;
+            }
+        }
     }
-
-
     fclose(fichier_liste_lieux);
 
-    //printf("%s\r\n", liste_lieu[1].nom);
 
-
-
-    // l'erreur est du au nombre de donnée à 2
-
-
-    
-
-    getPoints(0);
-    
-
-
-    return 0;
+    return liste_lieu;
 }
 
 
 
 
 
+
+
 double** getPoints(int id){
-    double **pointeur;
+    double **pointeur = NULL;
+
+
     FILE *fichier_lieu_points = NULL;
 
-    char donnees_txt[40] = "";       // Donné récupéré
-    const char s[2] = ",";  // Séparateur
+    char donnees_txt[LONGUEUR_CHAINE_CHARACTERE] = "";       // Donné récupéré
+    const char s[2] = ",";                                  // Séparateur
 
     double *latitude = NULL;
     double *longitude = NULL;
 
     int compteur = 0;
-    char path[6];
-    int nombre_de_points = 0;
+    char *path;
+    int nombre_de_lignes = 0;
 
-
+    char *pointeur_premier_ligne = NULL;                           // Pointeur utilisé récupéré à chaque ligne
 
 
     
 
     // Ouverture du fichier liste des lieux
-    sprintf(path, "%d.csv", id);
+    path = malloc(6*sizeof(char));
+    sprintf(path, "lieu/%d.csv", id);
+    //printf("%s\n", path);
 
-    fichier_lieu_points = fopen("lieu/0.csv", "r");
-    if ( fichier_lieu_points == NULL ) {
-        printf("erreur d'ouverture du fichier fichier_liste_lieux");    
+    fichier_lieu_points = fopen(path, "r");
+    
+    if (fichier_lieu_points == NULL) {
+        printf("erreur d'ouverture du fichie\n");    
     }
-
-
-    if(fichier_lieu_points != NULL){
-        // On compte le nombre delignes dans le fichier (nb de points)
-
-        while(fgets(donnees_txt, 40, fichier_lieu_points) != NULL){
-            nombre_de_points++;
+    else{
+        //printf("ouverture reussite du fichier\n");    
+        
+        // On compte le nombre de lignes dans le fichier (nb de points)
+        while(fgets(donnees_txt, LONGUEUR_CHAINE_CHARACTERE, fichier_lieu_points) != NULL){
+            nombre_de_lignes++;
         }
-
-        printf("nb lignes : %d\r\n", nombre_de_points);
-
+        //printf("nb lignes : %d\r\n", nombre_de_lignes);
 
 
-        latitude = malloc(nombre_de_points * sizeof(double));
-        longitude = malloc(nombre_de_points * sizeof(double));
+
+        latitude = malloc(nombre_de_lignes * sizeof(double));
+        longitude = malloc(nombre_de_lignes * sizeof(double));
 
 
 
         rewind(fichier_lieu_points);                    // On replace le curseur au debut du fichier
 
-        while(fgets(donnees_txt, 40, fichier_lieu_points)){
+        while(fgets(donnees_txt, LONGUEUR_CHAINE_CHARACTERE, fichier_lieu_points)){
             
-            latitude[compteur] = atof(strtok(donnees_txt, s));
-            longitude[compteur] = atol(strtok(NULL, s));
+            pointeur_premier_ligne = strtok(donnees_txt, s);
+            
+            latitude[compteur] = atof(pointeur_premier_ligne);
+            longitude[compteur] = atof(strtok(NULL, s));
 
             compteur ++;
         }
     }
 
 
-    //printf("latitude 2 : %f\r\n", latitude[2]);
+    fclose(fichier_lieu_points);
 
 
 
@@ -176,7 +232,8 @@ double** getPoints(int id){
 
 
     pointeur[0] = latitude;
-    pointeur[0] = latitude;
+    pointeur[1] = longitude;
+
     return pointeur;
 }
 
