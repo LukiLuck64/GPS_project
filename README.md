@@ -1,5 +1,10 @@
 # GPS_project
 
+## Sommaire
+ - [Utilisation de l'appareil gps]([#utilisation-de-lappareil-gps)
+ - [Simulation des points gps](#simulation-des-points-gps)
+ - [Analyse des trames](#analyse-des-trames)
+
 ## Utilisation de l'appareil gps
 
 ```bash
@@ -16,7 +21,7 @@ Remarque : regarder le fichier output.nmea comme exemple
 nmeasimulator
 ```
 
-Faire cette commande pour lancer le programme et visualiser le chemin qu'a fait la personne.
+Faire cette commande pour lancer le programme et visual//**--iser le chemin qu'a fait la personne.
 
 Ensuite cliquer sur le logo en haut à droite ( follow track ) pour visualiser la trame sur la mini map. 
 Avec le programme il est même possible de le faire en temps réel.
@@ -28,7 +33,7 @@ make
 ./script_trajectoire arg[1] arg[2] arg[3]
 ```
 
-Le programme prend des arguments en ligne de commande pour effectuer différentes actions :
+### Le programme prend des arguments en ligne de commande pour effectuer différentes actions :
 ---
 - `0` : Affiche les lieux enregistrés
 ---
