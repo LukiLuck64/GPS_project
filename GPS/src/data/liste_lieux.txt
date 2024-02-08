@@ -1,2 +1,10 @@
 chateau,16
 musees_des_beaux_arts_et_de_normandie,5
+abbaye_aux_dames,7
+abbaye_aux_hommes,4
+port_de_plaisance,4
+gare_routiere,4
+patinoire,4
+piscine,4
+comedie_de_caen_et_concervatoire,4
+tribunal_administratif,4
