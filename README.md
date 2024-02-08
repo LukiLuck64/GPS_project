@@ -1,11 +1,11 @@
 # GPS_project
 
 ## Sommaire
- - [Utilisation de l'appareil gps](#utilisation-de-lappareil-gps)
+ - [Utilisation appareil gps](#utilisation-appareil-gps)
  - [Simulation des points gps](#simulation-des-points-gps)
  - [Analyse des trames](#analyse-des-trames)
 
-## Utilisation de l'appareil gps
+## Utilisation appareil gps
 
 ```bash
 ./setup.bash
