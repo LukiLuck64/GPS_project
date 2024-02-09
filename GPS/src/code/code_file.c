@@ -43,6 +43,12 @@ int main(int , char* argv[])
 
     if((atoi(argv[1]) != 0) && (atoi(argv[1]) != 2)){
 
+        if((atoi(argv[1]) == 1)){
+            decimal = 1;
+        }else{
+            decimal = 0;
+        }
+
         // ========= trame 1 ===========
         //gps_device = fopen("/dev/ttyUSB0", "r");
         trame1_txt = fopen(argv[2], "r");
@@ -204,7 +210,7 @@ int main(int , char* argv[])
 
             }
             if(dist_avant != dist_km_min){
-                printf(" proche de %lf m du %s \n", dist_km_min*1000, Lieu1.nom);
+                printf(" proche de %4.1lf m du %s \n", dist_km_min*1000, Lieu1.nom);
                 dist_avant = dist_km_min;
             }
             dist_km_min = 5000;

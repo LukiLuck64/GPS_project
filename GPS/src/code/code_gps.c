@@ -3,7 +3,7 @@
 
 // variable globlal
 int index_trame = 0;
-char decimal = 1;
+char decimal = 0;
 
 // Convertir les degrés en radians
 double deg2rad(double deg) {
