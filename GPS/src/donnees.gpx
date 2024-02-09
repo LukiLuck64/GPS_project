@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0" creator="GPSBabel - https://www.gpsbabel.org" xmlns="http://www.topografix.com/GPX/1/0">
+  <time>2024-02-09T03:01:14.302Z</time>
+  <bounds minlat="49.175483333" minlon="-0.361783333" maxlat="49.189333333" maxlon="-0.343233333"/>
+  <trk>
+    <trkseg>
+      <trkpt lat="49.189333333" lon="-0.361783333">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:15.233Z</time>
+        <course>147.699997</course>
+        <speed>236.335785</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+      <trkpt lat="49.187366667" lon="-0.360533333">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:16.233Z</time>
+        <course>185.800003</course>
+        <speed>234.432327</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+      <trkpt lat="49.185266667" lon="-0.360750000">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:17.233Z</time>
+        <course>167.000000</course>
+        <speed>416.442780</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+      <trkpt lat="49.181566667" lon="-0.359883333">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:18.233Z</time>
+        <course>117.500000</course>
+        <speed>581.682312</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+      <trkpt lat="49.178316667" lon="-0.353616667">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:19.233Z</time>
+        <course>133.000000</course>
+        <speed>385.113098</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+      <trkpt lat="49.175483333" lon="-0.350583333">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:20.233Z</time>
+        <course>73.900002</course>
+        <speed>582.505432</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+      <trkpt lat="49.177583333" lon="-0.343233333">
+        <ele>0.000</ele>
+        <time>2024-02-09T00:12:21.233Z</time>
+        <course>73.900002</course>
+        <speed>582.505432</speed>
+        <geoidheight>0.0</geoidheight>
+        <fix>3d</fix>
+        <sat>12</sat>
+        <hdop>1.000000</hdop>
+        <vdop>1.000000</vdop>
+        <pdop>1.000000</pdop>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

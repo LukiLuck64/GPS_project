@@ -237,7 +237,7 @@ int main(int , char* argv[])
         break;
     }
 
-    //system("./nmea_to_gpx.bash donnees.nmea");
+    system("./nmea_to_gpx.bash donnees.nmea");
 
     return 0;
 }

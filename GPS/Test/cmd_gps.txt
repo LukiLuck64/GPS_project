@@ -9,5 +9,6 @@ make
 decimal = 0
 make
 ./script_trajectoire 3 data/trame_itineraire_1.txt chateau
+nmeasimulator
 
 ./script_trajectoire 4 data/trame_itineraire_1.txt data/trame_itineraire_2.txt 

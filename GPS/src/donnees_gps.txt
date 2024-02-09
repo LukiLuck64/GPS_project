@@ -1,42 +1,42 @@
-trame n°0 : $GPGLL,49.185852,N,-0.360419,W,123519,A,0504199
-latitude : 49.185852, NS : N, longitude : 0.360419, WE : W, heure : 12:35:19
+trame n°0 : $GPGGA,001215.233,4911.360,N,00021.707,W,1,12,1.0,0.0,M,0.0,M,,*72
+heure : 0:12:15, latitude : 49.189333, NS : N, longitude : -0.361783
 
-trame n°1 : $GPGLL,49.184092,N,-0.359496,W,123713,A,0504199
-latitude : 49.184092, NS : N, longitude : 0.359496, WE : W, heure : 12:37:13
+trame n°2 : $GPRMC,001215.233,A,4911.360,N,00021.707,W,459.4,147.7,090224,000.0,W*62
+latitude : 49.189333, NS : N, longitude : -0.361783, WE : W, heure : 0:4:59
 
-trame n°2 : $GPGLL,49.183706,N,-0.356266,W,123810,A,0504199
-latitude : 49.183706, NS : N, longitude : 0.356266, WE : W, heure : 12:38:10
+trame n°3 : $GPGGA,001216.233,4911.242,N,00021.632,W,1,12,1.0,0.0,M,0.0,M,,*77
+heure : 0:12:16, latitude : 49.187367, NS : N, longitude : -0.360533
 
-trame n°3 : $GPGLL,49.179880,N,-0.363955,W,124011,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:40:11
+trame n°5 : $GPRMC,001216.233,A,4911.242,N,00021.632,W,455.7,185.8,090224,000.0,W*69
+latitude : 49.187367, NS : N, longitude : -0.360533, WE : W, heure : 0:4:56
 
-trame n°4 : $GPGLL,49.179880,N,-0.363955,W,124111,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:41:11
+trame n°6 : $GPGGA,001217.233,4911.116,N,00021.645,W,1,12,1.0,0.0,M,0.0,M,,*74
+heure : 0:12:17, latitude : 49.185267, NS : N, longitude : -0.360750
 
-trame n°5 : $GPGLL,49.179880,N,-0.363955,W,124211,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:42:11
+trame n°8 : $GPRMC,001217.233,A,4911.116,N,00021.645,W,809.5,167.0,090224,000.0,W*69
+latitude : 49.185267, NS : N, longitude : -0.360750, WE : W, heure : 0:8:9
 
-trame n°6 : $GPGLL,49.179880,N,-0.363955,W,124311,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:43:11
+trame n°9 : $GPGGA,001218.233,4910.894,N,00021.593,W,1,12,1.0,0.0,M,0.0,M,,*71
+heure : 0:12:18, latitude : 49.181567, NS : N, longitude : -0.359883
 
-trame n°7 : $GPGLL,49.179880,N,-0.363955,W,124411,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:44:11
+trame n°11 : $GPRMC,001218.233,A,4910.894,N,00021.593,W,1130.7,117.5,090224,000.0,W*5E
+latitude : 49.181567, NS : N, longitude : -0.359883, WE : W, heure : 0:11:31
 
-trame n°8 : $GPGLL,49.179880,N,-0.363955,W,124711,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:47:11
+trame n°12 : $GPGGA,001219.233,4910.699,N,00021.217,W,1,12,1.0,0.0,M,0.0,M,,*78
+heure : 0:12:19, latitude : 49.178317, NS : N, longitude : -0.353617
 
-trame n°9 : $GPGLL,49.179880,N,-0.363955,W,125211,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:52:11
+trame n°14 : $GPRMC,001219.233,A,4910.699,N,00021.217,W,748.6,133.0,090224,000.0,W*6D
+latitude : 49.178317, NS : N, longitude : -0.353617, WE : W, heure : 0:7:49
 
-trame n°10 : $GPGLL,49.179880,N,-0.363955,W,125411,A,0504199
-latitude : 49.179880, NS : N, longitude : 0.363955, WE : W, heure : 12:54:11
+trame n°15 : $GPGGA,001220.233,4910.529,N,00021.035,W,1,12,1.0,0.0,M,0.0,M,,*78
+heure : 0:12:20, latitude : 49.175483, NS : N, longitude : -0.350583
 
-trame n°11 : $GPGLL,49.179179,N,-0.363955,W,125507,A,0504199
-latitude : 49.179179, NS : N, longitude : 0.363955, WE : W, heure : 12:55:7
+trame n°17 : $GPRMC,001220.233,A,4910.529,N,00021.035,W,1132.3,073.9,090224,000.0,W*5E
+latitude : 49.175483, NS : N, longitude : -0.350583, WE : W, heure : 0:11:32
 
-trame n°12 : $GPGLL,49.177734,N,-0.364911,W,125804,A,0504199
-latitude : 49.177734, NS : N, longitude : 0.364911, WE : W, heure : 12:58:4
+trame n°18 : $GPGGA,001221.233,4910.655,N,00020.594,W,1,12,1.0,0.0,M,0.0,M,,*7E
+heure : 0:12:21, latitude : 49.177583, NS : N, longitude : -0.343233
 
-trame n°13 : $GPGLL,49.176908,N,-0.363702,W,130317,A,0504199
-latitude : 49.176908, NS : N, longitude : 0.363702, WE : W, heure : 13:3:17
+trame n°20 : $GPRMC,001221.233,A,4910.655,N,00020.594,W,1132.3,073.9,090224,000.0,W*58
+latitude : 49.177583, NS : N, longitude : -0.343233, WE : W, heure : 0:11:32
 
