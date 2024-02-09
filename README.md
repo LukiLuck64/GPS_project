@@ -1,5 +1,19 @@
 # GPS_project
 
+## Introduction
+Les trames GPS, ou messages NMEA, sont des données formatées transmises par les récepteurs GPS pour fournir des informations sur la position, la vitesse et d'autres paramètres associés à un appareil de localisation. Ces trames suivent un format standardisé, ce qui les rend compatibles avec différents récepteurs GPS et systèmes de navigation. Elles sont utilisées dans une variété d'applications telles que la navigation automobile, la cartographie et la géolocalisation des biens.
+
+Trois types de trames GPS :
+
+ - GPGGA (Global Positioning System Fix Data) :
+        Fournit des données de position précises telles que la latitude, la longitude, l'altitude et le nombre de satellites utilisés.
+ - GPRMC (Recommended Minimum Specific GPS/Transit Data) :
+        Donne des informations de navigation essentielles comme la latitude, la longitude, la vitesse et le cap.
+ - GPGLL (Geographic Position – Latitude/Longitude) :
+        Transmet les données de position sous forme de latitude et de longitude, souvent utilisées dans les applications de navigation et de suivi.
+
+Ces trames sont largement utilisées pour obtenir des informations de localisation précises à partir des récepteurs GPS. Chacune d'elles offre des détails spécifiques sur la position et est utilisée dans diverses applications de navigation et de suivi.
+
 ## Architecture logiciel
 - ![](GPS/src/data/architecture_logiciel.png)
 
