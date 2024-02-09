@@ -1,5 +1,12 @@
 # GPS_project
 
+## Architecture logiciel
+- ![](GPS/src/data/architecture_logiciel.png)
+
+
+# Architecture base de donnée
+- ![](GPS/src/data/architecture_base_de_donnees.png)
+
 ## Sommaire
  - [Utilisation appareil gps](#utilisation-appareil-gps)
  - [Simulation des points gps](#simulation-des-points-gps)
