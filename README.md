@@ -65,6 +65,10 @@ make
 ---
 
 - `0`: Displays registered locations
+-  Chateau
+-  ![](GPS/src/data/chateau.png)
+-  Abbaye aux Hommes
+-  ![](GPS/src/data/abbaye_aux_hommes.png)
 
 ---
 
