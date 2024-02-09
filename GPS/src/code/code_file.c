@@ -22,7 +22,7 @@ int main(int , char* argv[])
     double trame_1_lat_lon[2][NB_TRAME];
     double trame_2_lat_lon[2][NB_TRAME];
 
-    double dist_km=0, dist_tot=0;
+    double dist_km=0, dist_tot=0, dist_km_min=0, dist_avant=0;
 
     double temps_1[NB_TRAME][3];
     double temps_total_1[3];
@@ -33,8 +33,10 @@ int main(int , char* argv[])
     Lieu* List_lieu;
     unsigned long cpt_nb_lieu = 0;
     List_lieu = getListeLieu();
+    Lieu Lieu1,Lieu2;
+    double** point_lieu_lat_lon;
 
-    if((atoi(argv[1]) != 0) | (atoi(argv[1]) != 2)){
+    if((atoi(argv[1]) != 0) & (atoi(argv[1]) != 2)){
 
         // ========= trame 1 ===========
         //gps_device = fopen("/dev/ttyUSB0", "r");
@@ -59,7 +61,7 @@ int main(int , char* argv[])
         {
             // Récupération de la trame ( ligne par ligne )
             fscanf(trame1_txt, "%s", str);
-            
+
             // Enregistrement des données dans le fichier donnees.txt
             //fprintf(fichierDonnees, "\nChaine n°%d lue : %s\n\n", nb_trame, str);
             fprintf(fichierDonnees, "%s\n", str);
@@ -92,7 +94,7 @@ int main(int , char* argv[])
                 nb_ligne1++;
             }
                 // On replace le curseur au debut du fichier
-                rewind(trame1_txt);
+                rewind(trame2_txt);
 
             // Utilisez fscanf pour lire une chaîne depuis le fichier
             while( nb_trame2 < nb_ligne2)
@@ -139,32 +141,68 @@ int main(int , char* argv[])
         // Permet de calculer la distance totale et l'heure d'un itinéraire
         for(int j=0;j<nb_trame1-3;j++){
             dist_km = distance_haversine(trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_1_lat_lon[0][j+1], trame_1_lat_lon[1][j+1]);
-            //printf("dist %lf\n , coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",dist_km, trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_1_lat_lon[0][j+1], trame_1_lat_lon[1][j+1]);
             dist_tot = dist_tot + dist_km;
         }
     
         timeDif(temps_1[nb_trame1-1],temps_1[0],temps_total_1);
 
-        printf("Distance total : %4.0lf m\nTemps total : %0.0lf:%0.0lf:%0.0lf \n",dist_tot*1000,temps_total_1[0],temps_total_1[1],temps_total_1[2]);
+        printf("Distance total : %4.0lf m\nTemps total    : %0.0lf:%0.0lf:%0.0lf \n",dist_tot*1000,temps_total_1[0],temps_total_1[1],temps_total_1[2]);
 
         break;
 
     case 2:
         
-        printf("entre 2 lieux");
+        printf("Distance entre 2 lieux :\n");
+        while (List_lieu[cpt_nb_lieu+1].nom != NULL )
+        {
+            if(strcmp(List_lieu[cpt_nb_lieu].nom,argv[2])==0 ){
+                Lieu1=List_lieu[cpt_nb_lieu];
+            }
+
+            if(strcmp(List_lieu[cpt_nb_lieu].nom,argv[3])==0 ){
+                Lieu2=List_lieu[cpt_nb_lieu];
+            }
+            cpt_nb_lieu++;
+        }
+
+        dist_km = distance_haversine(getPoints((int)Lieu1.identifiant)[0][0], getPoints((int)Lieu1.identifiant)[1][0], getPoints((int)Lieu2.identifiant)[0][0], getPoints((int)Lieu2.identifiant)[1][0]);
+
+        printf("Distance entre %s et %s est de %3.0lf m\n",Lieu1.nom, Lieu2.nom, dist_km*1000);
+
         break;
 
     case 3:
-        printf("Analyse l'itinéraire en proposant pour chaque point la distance qui le sépare du lieu");
+        printf("Analyse l'itinéraire en proposant pour chaque point la distance qui le sépare du lieu\n");
         
-        for(int j=0;j<nb_trame1;j++){
-            for(int i=0;i<nb_trame1;i++){
-                dist_km = distance_haversine(trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_1_lat_lon[0][i], trame_1_lat_lon[1][i]);
-                if((dist_km <= 0.05) & (dist_km != 0)){
-                printf("proche de %.2f m   | ", dist_km*1000);
-                printf("coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_2_lat_lon[0][i], trame_1_lat_lon[1][i]);
-                }
+        while (List_lieu[cpt_nb_lieu+1].nom != NULL )
+        {
+            if(strcmp(List_lieu[cpt_nb_lieu].nom,argv[3])==0 ){
+                Lieu1=List_lieu[cpt_nb_lieu];
             }
+            cpt_nb_lieu++;
+        }
+
+        point_lieu_lat_lon = getPoints((int)Lieu1.identifiant);
+
+        dist_km_min = 5000;
+        
+
+        for(int j=0;j<index_trame;j++){
+            for(int i=0;i<(Lieu1.nombre_de_points);i++){
+                dist_km = distance_haversine(trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], point_lieu_lat_lon[0][i], point_lieu_lat_lon[1][i]);
+                
+                if(dist_km<dist_km_min){
+                    dist_km_min = dist_km;
+                }
+                //printf("distance : %lf\n",dist_km*1000);
+            }
+            if(dist_avant == dist_km_min){
+               dist_avant = dist_km_min;
+            }else{
+                printf(" proche de %lf m du %s \n", dist_km_min*1000, Lieu1.nom);
+                dist_avant = dist_km_min;
+            }
+            dist_km_min = 5000;
         }
         break;
     
@@ -174,8 +212,8 @@ int main(int , char* argv[])
             for(int i=0;i<nb_trame1;i++){
                 dist_km = distance_haversine(trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_2_lat_lon[0][i], trame_2_lat_lon[1][i]);
                 if((dist_km <= 0.05) & (dist_km != 0)){
-                printf("proche de %.2f m   | ", dist_km*1000);
-                printf("coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_2_lat_lon[0][i], trame_1_lat_lon[1][i]);
+                //printf("proche de %.2f m   | ", dist_km*1000);
+                //printf("coordonne : lat1=%lf lon1=%lf lat2=%lf lon2=%lf \n",trame_1_lat_lon[0][j], trame_1_lat_lon[1][j], trame_2_lat_lon[0][i], trame_1_lat_lon[1][i]);
                 }
             }
         }

@@ -1,70 +1,42 @@
-trame n°0 : $GPGLL,49.185852,N,-0.360419,W,123519,A,0504199
-latitude : 49.185852, NS : N, longitude : -0.360419, WE : W,  heure : 123519.000
-heure : 12.000, minute : 35.000, seconde : 19.000
-latitude : 49.185852, NS : N, longitude : -0.360419, WE : W, heure : 12:35:19
+trame n°0 : $GPGGA,202947.188,4911.266,N,00021.929,W,1,12,1.0,0.0,M,0.0,M,,*79
+heure : 20:29:47, latitude : 49.187767, NS : N, longitude : -0.365483
 
-trame n°1 : $GPGLL,49.184092,N,-0.359496,W,123713,A,0504199
-latitude : 49.184092, NS : N, longitude : -0.359496, WE : W,  heure : 123713.000
-heure : 12.000, minute : 37.000, seconde : 13.000
-latitude : 49.184092, NS : N, longitude : -0.359496, WE : W, heure : 12:37:13
+trame n°2 : $GPRMC,202947.188,A,4911.266,N,00021.929,W,361.6,083.5,080224,000.0,W*6D
+latitude : 49.187767, NS : N, longitude : -0.365483, WE : W, heure : 0:3:62
 
-trame n°2 : $GPGLL,49.183706,N,-0.356266,W,123810,A,0504199
-latitude : 49.183706, NS : N, longitude : -0.356266, WE : W,  heure : 123810.000
-heure : 12.000, minute : 38.000, seconde : 10.000
-latitude : 49.183706, NS : N, longitude : -0.356266, WE : W, heure : 12:38:10
+trame n°3 : $GPGGA,202948.188,4911.283,N,00021.778,W,1,12,1.0,0.0,M,0.0,M,,*77
+heure : 20:29:48, latitude : 49.188050, NS : N, longitude : -0.362967
 
-trame n°3 : $GPGLL,49.179880,N,-0.363955,W,124011,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124011.000
-heure : 12.000, minute : 40.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:40:11
+trame n°5 : $GPRMC,202948.188,A,4911.283,N,00021.778,W,767.6,126.3,080224,000.0,W*69
+latitude : 49.188050, NS : N, longitude : -0.362967, WE : W, heure : 0:7:68
 
-trame n°4 : $GPGLL,49.179880,N,-0.363955,W,124111,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124111.000
-heure : 12.000, minute : 41.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:41:11
+trame n°6 : $GPGGA,202949.188,4911.124,N,00021.561,W,1,12,1.0,0.0,M,0.0,M,,*72
+heure : 20:29:49, latitude : 49.185400, NS : N, longitude : -0.359350
 
-trame n°5 : $GPGLL,49.179880,N,-0.363955,W,124211,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124211.000
-heure : 12.000, minute : 42.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:42:11
+trame n°8 : $GPRMC,202949.188,A,4911.124,N,00021.561,W,767.6,000.0,080224,000.0,W*6A
+latitude : 49.185400, NS : N, longitude : -0.359350, WE : W, heure : 0:7:68
 
-trame n°6 : $GPGLL,49.179880,N,-0.363955,W,124311,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124311.000
-heure : 12.000, minute : 43.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:43:11
+trame n°9 : $GPGGA,202950.188,4911.124,N,00021.561,W,1,12,1.0,0.0,M,0.0,M,,*7A
+heure : 20:29:50, latitude : 49.185400, NS : N, longitude : -0.359350
 
-trame n°7 : $GPGLL,49.179880,N,-0.363955,W,124411,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124411.000
-heure : 12.000, minute : 44.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:44:11
+trame n°11 : $GPRMC,202950.188,A,4911.124,N,00021.561,W,555.4,264.8,080224,000.0,W*6B
+latitude : 49.185400, NS : N, longitude : -0.359350, WE : W, heure : 0:5:55
 
-trame n°8 : $GPGLL,49.179880,N,-0.363955,W,124711,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 124711.000
-heure : 12.000, minute : 47.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:47:11
+trame n°12 : $GPGGA,202951.188,4911.103,N,00021.795,W,1,12,1.0,0.0,M,0.0,M,,*77
+heure : 20:29:51, latitude : 49.185050, NS : N, longitude : -0.363250
 
-trame n°9 : $GPGLL,49.179880,N,-0.363955,W,125211,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 125211.000
-heure : 12.000, minute : 52.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:52:11
+trame n°14 : $GPRMC,202951.188,A,4911.103,N,00021.795,W,547.8,304.4,080224,000.0,W*62
+latitude : 49.185050, NS : N, longitude : -0.363250, WE : W, heure : 0:5:48
 
-trame n°10 : $GPGLL,49.179880,N,-0.363955,W,125411,A,0504199
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W,  heure : 125411.000
-heure : 12.000, minute : 54.000, seconde : 11.000
-latitude : 49.179880, NS : N, longitude : -0.363955, WE : W, heure : 12:54:11
+trame n°15 : $GPGGA,202952.188,4911.213,N,00021.956,W,1,12,1.0,0.0,M,0.0,M,,*77
+heure : 20:29:52, latitude : 49.186883, NS : N, longitude : -0.365933
 
-trame n°11 : $GPGLL,49.179179,N,-0.363955,W,125507,A,0504199
-latitude : 49.179179, NS : N, longitude : -0.363955, WE : W,  heure : 125507.000
-heure : 12.000, minute : 55.000, seconde : 7.000
-latitude : 49.179179, NS : N, longitude : -0.363955, WE : W, heure : 12:55:7
+trame n°17 : $GPRMC,202952.188,A,4911.213,N,00021.956,W,512.5,322.1,080224,000.0,W*6E
+latitude : 49.186883, NS : N, longitude : -0.365933, WE : W, heure : 0:5:12
 
-trame n°12 : $GPGLL,49.177734,N,-0.364911,W,125804,A,0504199
-latitude : 49.177734, NS : N, longitude : -0.364911, WE : W,  heure : 125804.000
-heure : 12.000, minute : 58.000, seconde : 4.000
-latitude : 49.177734, NS : N, longitude : -0.364911, WE : W, heure : 12:58:4
+trame n°18 : $GPGGA,202953.188,4911.339,N,00022.055,W,1,12,1.0,0.0,M,0.0,M,,*76
+heure : 20:29:53, latitude : 49.188983, NS : N, longitude : -0.367583
 
-trame n°13 : $GPGLL,49.176908,N,-0.363702,W,130317,A,0504199
-latitude : 49.176908, NS : N, longitude : -0.363702, WE : W,  heure : 130317.000
-heure : 13.000, minute : 3.000, seconde : 17.000
-latitude : 49.176908, NS : N, longitude : -0.363702, WE : W, heure : 13:3:17
+trame n°20 : $GPRMC,202953.188,A,4911.339,N,00022.055,W,512.5,322.1,080224,000.0,W*6F
+latitude : 49.188983, NS : N, longitude : -0.367583, WE : W, heure : 0:5:12
 

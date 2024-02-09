@@ -3,7 +3,7 @@
 
 // variable globlal
 int index_trame = 0;
-char decimal = 1;
+char decimal = 0;
 
 // Convertir les degrés en radians
 double deg2rad(double deg) {
@@ -57,16 +57,24 @@ void init_heure(double heure, double* temps){
    temps[2]=((((heure/10000)-temps[0])*100)-temps[1])*100;
 }
 
-double init_long_or_lat(double longitude){
+double init_long_or_lat(char* longitude, char lon){
 
-   double coord[3];
+    // Extraction des degrés, minutes et secondes à partir de la chaîne de caractères
+    int degres;
+    int minutes;
+    double secondes;
 
-   coord[0]=((int)longitude/100);
-   coord[1]=(int)(((longitude/100)-coord[0])*100);
-   coord[2]=((((longitude/100)-coord[0])*100)-coord[1])*1000;
+    if(lon == 0){
+      sscanf(longitude, "%02d%02d%lf", &degres, &minutes, &secondes);
+    }else{
+      sscanf(longitude, "%03d%02d%lf", &degres, &minutes, &secondes);
+    }
 
-   return (coord[0]+(coord[1]/60)+(coord[2]/3600)); //en degres
+    // Affichage des degrés, minutes et secondes pour vérification
+    //printf("Degrés : %02d | Minutes : %02d | Secondes : %lf\n", degres, minutes, secondes);
 
+    // Conversion en degrés décimaux et retour
+    return (degres + (minutes / 60.0) + (secondes*60 / 3600.0));
 }
 
 // Fonction de decodage de trame
@@ -75,39 +83,46 @@ void decode_GGA(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_TRA
    double latitude[2];
    double longitude[2];
    double heure;
-   char* NS = malloc(2 * sizeof *NS);
+   char* NS = malloc(2 * sizeof(char));
+   char* WE = malloc(2 * sizeof(char));
    
    if((latitude == NULL)||(longitude == NULL)||(NS == NULL)||(temps == NULL)){
       exit(1);
    }
 
    heure = atof(strtok(NULL,s));
-   latitude[0] = atof(strtok(NULL,s));
-   NS = strtok(NULL,s);
-   longitude[0] = atof(strtok(NULL,s));
-
-   //printf("heure : %s, latitude : %s, NS : %s, longitude : %s",heure, latitude, NS, longitude);
    
-   fprintf(fichierDonneesGPS, "heure : %0.3lf, latitude : %0.6lf, NS : %s, longitude : %0.6lf\n",heure, latitude[LA_LO_OLD], NS, longitude[LA_LO_OLD]);
+   // initialisation longitude et latitude
+   if(decimal == 0){
+      latitude[1] = init_long_or_lat(strtok(NULL,s),0);
+      NS = strtok(NULL,s);
+      longitude[1] = init_long_or_lat(strtok(NULL,s),1);
+   }else{
+      latitude[1] = atof(strtok(NULL,s));
+      NS = strtok(NULL,s);
+      longitude[1] = atof(strtok(NULL,s));
+   }
+
+   WE = strtok(NULL,s);
+   if(NS[0] == 'S'){
+      latitude[1]=-latitude[1];
+   }
+   if(WE[0] == 'W'){
+      longitude[1]=-longitude[1];
+   }
+
    
    // initialisation de l'heure
    init_heure(heure, temps[index_trame]); // initialisation de l'heure
-
-   // initialisation longitude et latitude
-   if(decimal == 0){
-      longitude[1] = init_long_or_lat(longitude[0]);
-      latitude[1] = init_long_or_lat(latitude[0]);
-   }else{
-      longitude[1] = longitude[0];
-      latitude[1] = latitude[0];
-   }
 
    fprintf(fichierDonneesGPS, "heure : %0.0lf:%0.0lf:%0.0lf, latitude : %0.6lf, NS : %s, longitude : %0.6lf\n\n",temps[index_trame][0],temps[index_trame][1],temps[index_trame][2], latitude[LA_LO_NEW], NS, longitude[LA_LO_NEW]);
    //free(NS);
 
    lat_lon[0][index_trame]=latitude[LA_LO_NEW];
    lat_lon[1][index_trame]=longitude[LA_LO_NEW];
+
    index_trame++;
+   
 }
 
 void decode_GPRMC(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_TRAME], double temps[NB_TRAME][3]){
@@ -122,39 +137,37 @@ void decode_GPRMC(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_T
       exit(1);
    }
 
-   
-   latitude[0] = atof(strtok(NULL,s));
-   NS = strtok(NULL,s);
-   longitude[0] = atof(strtok(NULL,s));
-
-   
-   WE = strtok(NULL,s);
-   heure = atof(strtok(NULL,s));
-
-   fprintf(fichierDonneesGPS, "latitude : %0.6lf, NS : %s, longitude : %0.6lf, WE : %s,  heure : %0.3lf\n", latitude[LA_LO_OLD], NS, longitude[LA_LO_OLD], WE, heure);
-   
-   // initialise l'heure
-   init_heure(heure, temps[index_trame]); // initialisation de l'heure
-
-   fprintf(fichierDonneesGPS, "heure : %0.3lf, minute : %0.3lf, seconde : %0.3lf\n", temps[index_trame][0],temps[index_trame][1],temps[index_trame][2]);
 
    // initialisation longitude et latitude
    if(decimal == 0){
-      longitude[1] = init_long_or_lat(longitude[0]);
-      latitude[1] = init_long_or_lat(latitude[0]);
+      latitude[1] = init_long_or_lat(strtok(NULL,s),0);
+      NS = strtok(NULL,s);
+      longitude[1] = init_long_or_lat(strtok(NULL,s),1);
    }else{
-      longitude[1] = longitude[0];
-      latitude[1] = latitude[0];
+      latitude[1] = atof(strtok(NULL,s));
+      NS = strtok(NULL,s);
+      longitude[1] = atof(strtok(NULL,s));
    }
+
+   WE = strtok(NULL,s);
+   heure = atof(strtok(NULL,s));
+
+   if(NS[0] == 'S'){
+      latitude[1]=-latitude[1];
+   }
+   if(WE[0] == 'W'){
+      longitude[1]=-longitude[1];
+   }
+
+   // initialise l'heure
+   init_heure(heure, temps[index_trame]); // initialisation de l'heure
+   
    fprintf(fichierDonneesGPS, "latitude : %0.6lf, NS : %s, longitude : %0.6lf, WE : %s, heure : %0.0lf:%0.0lf:%0.0lf\n\n", latitude[LA_LO_NEW], NS, longitude[LA_LO_NEW], WE, temps[index_trame][0],temps[index_trame][1],temps[index_trame][2]);
-   //free(NS);
-   //free(WE);
 
    lat_lon[0][index_trame]=latitude[LA_LO_NEW];
    lat_lon[1][index_trame]=longitude[LA_LO_NEW];
 
    index_trame++;
-
 }
 
 // Fonction principale d'analyse de trame 
@@ -184,9 +197,7 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    if(strcmp(token,"$GPRMC")==0){
       token = strtok(NULL, s);
       token = strtok(NULL, s);
-      token = strtok(NULL, s);
-      token = strtok(NULL, s);
-      token = strtok(NULL, s);
+
       if(strcmp(token,"A")==0){
          fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
          decode_GPRMC(s,fichierDonneesGPS, lat_lon, temps);
@@ -207,6 +218,4 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
       }
    }
    
-   free(str_copy);
-
 }

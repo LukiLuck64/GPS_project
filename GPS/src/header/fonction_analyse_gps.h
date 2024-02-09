@@ -11,11 +11,14 @@
 #define PI 3.14159265358979323846
 
 
+extern int index_trame ;
+extern char decimal ;
+
 double deg2rad(double );
 double distance_haversine(double , double , double , double );
 void timeDif(double* , double* , double[3] );
 void init_heure(double , double* );
-double init_long_or_lat(double );
+double init_long_or_lat(char* , char);
 void decode_GGA(const char* , FILE *, double [2][NB_TRAME],double [NB_TRAME][3]);
 void decode_GPRMC(const char* , FILE *, double [2][NB_TRAME], double [NB_TRAME][3]);
 void analyse_gps(char* , FILE* , int , double [2][NB_TRAME], double [NB_TRAME][3]);

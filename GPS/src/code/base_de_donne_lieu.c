@@ -100,7 +100,7 @@ double** getPoints(int id){
 
     // Ouverture du fichier liste des lieux
     path = malloc(6*sizeof(char));
-    sprintf(path, "lieu/%d.csv", id);
+    sprintf(path, "data/lieu/%d.csv", id);
     //printf("%s\n", path);
 
     fichier_lieu_points = fopen(path, "r");
