@@ -53,3 +53,35 @@ make
   - `arg[3]` : Deuxième itinéraire
 ---
 
+### The program takes command-line arguments to perform different actions:
+
+---
+
+- `0`: Displays registered locations
+
+---
+
+- `1`: Calculates the distance traveled and the duration of this route
+  - `arg[2]`: Route file (itineraire.txt)
+
+---
+
+- `2`: Calculates the distance between two locations
+  - `arg[2]`: First location
+  - `arg[3]`: Second location
+
+---
+
+- `3`: Analyzes the route by proposing for each point the distance separating it from the location
+  - `arg[2]`: Route file (itineraire1.txt)
+  - `arg[3]`: Location to compare
+
+---
+
+- `4`: Meeting points (100m) between two routes
+  - `arg[2]`: First route
+  - `arg[3]`: Second route
+
+---
+
+
