@@ -3,7 +3,7 @@
 
 // variable globlal
 int index_trame = 0;
-char decimal = 0;
+char decimal = 1;
 
 // Convertir les degrés en radians
 double deg2rad(double deg) {
@@ -83,12 +83,9 @@ void decode_GGA(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_TRA
    double latitude[2];
    double longitude[2];
    double heure;
-   char* NS = malloc(2 * sizeof(char));
-   char* WE = malloc(2 * sizeof(char));
+   char* NS ;
+   char* WE ;
    
-   if((latitude == NULL)||(longitude == NULL)||(NS == NULL)||(temps == NULL)){
-      exit(1);
-   }
 
    heure = atof(strtok(NULL,s));
    
@@ -127,15 +124,12 @@ void decode_GGA(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_TRA
 
 void decode_GPRMC(const char* s, FILE *fichierDonneesGPS, double lat_lon[2][NB_TRAME], double temps[NB_TRAME][3]){
 
+
    double heure;
-   char* NS = malloc(2 * sizeof(char));
-   char* WE = malloc(2 * sizeof(char));
+   char* NS ;
+   char* WE ;
    double latitude[2];
    double longitude[2];
-
-   if((latitude == NULL)||(longitude == NULL)||(NS == NULL)||(temps == NULL)||(WE == NULL)){
-      exit(1);
-   }
 
 
    // initialisation longitude et latitude
@@ -177,13 +171,11 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
    const char s[2] = ","; 
    char *token;
    char *str_copy;
-   str_copy = malloc(strlen(str)*sizeof(char));
+   str_copy = malloc((strlen(str)+1)*sizeof(char));
    strcpy(str_copy, str);
    token = strtok(str, s); 		/* get the first token */
 
-
    if((token == NULL)||(str_copy == NULL)){
-      
       exit(1);
    }
 
@@ -200,9 +192,11 @@ void analyse_gps(char* str, FILE* fichierDonneesGPS, int nb_trame, double lat_lo
 
       if(strcmp(token,"A")==0){
          fprintf(fichierDonneesGPS, "trame n°%d : %s\n", nb_trame, str_copy );
+    
          decode_GPRMC(s,fichierDonneesGPS, lat_lon, temps);
       }
    }
+
    if((strcmp(token,"$GPGLL")==0)|(strcmp(token,"GPGLL")==0)){
       token = strtok(NULL, s);
       token = strtok(NULL, s);

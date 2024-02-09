@@ -1,0 +1,13 @@
+./script_trajectoire 0
+
+decimal = 1
+make
+./script_trajectoire 1 data/trame_dist_heure.txt 
+
+./script_trajectoire 2 chateau gare_routiere
+
+decimal = 0
+make
+./script_trajectoire 3 data/trame_itineraire_1.txt chateau
+
+./script_trajectoire 4 data/trame_itineraire_1.txt data/trame_itineraire_2.txt 

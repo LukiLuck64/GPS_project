@@ -46,8 +46,9 @@ make
 ---
 - `3` : Analyse l'itinéraire en proposant pour chaque point la distance qui le sépare du lieu
   - `arg[2]` : Fichier d'itinéraire (itineraire1.txt)
+  - `arg[3]` : Lieu à comparer
 ---
-- `4` : Les points de rencontre (50m) entre deux itinéraires
+- `4` : Les points de rencontre (100m) entre deux itinéraires
   - `arg[2]` : Premier itinéraire
   - `arg[3]` : Deuxième itinéraire
 ---
