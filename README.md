@@ -1,5 +1,11 @@
 # GPS_project
 
+## Sommaire
+ - [Utilisation appareil gps](#utilisation-appareil-gps)
+ - [Simulation des points gps](#simulation-des-points-gps)
+ - [Analyse des trames](#analyse-des-trames)
+
+
 ## Introduction
 Les trames GPS, ou messages NMEA, sont des données formatées transmises par les récepteurs GPS pour fournir des informations sur la position, la vitesse et d'autres paramètres associés à un appareil de localisation. Ces trames suivent un format standardisé, ce qui les rend compatibles avec différents récepteurs GPS et systèmes de navigation. Elles sont utilisées dans une variété d'applications telles que la navigation automobile, la cartographie et la géolocalisation des biens.
 
@@ -21,10 +27,6 @@ Ces trames sont largement utilisées pour obtenir des informations de localisati
 # Architecture base de donnée
 - ![](GPS/src/data/architecture_base_de_donnees.png)
 
-## Sommaire
- - [Utilisation appareil gps](#utilisation-appareil-gps)
- - [Simulation des points gps](#simulation-des-points-gps)
- - [Analyse des trames](#analyse-des-trames)
 
 ## Utilisation appareil gps
 
