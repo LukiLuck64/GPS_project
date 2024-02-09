@@ -51,10 +51,17 @@ void timeDif(double* temps1, double* temps2, double difference[3]){
 
 // Initialisation heure/long/lat
 void init_heure(double heure, double* temps){
-   
-   temps[0]=((int)heure/10000);
-   temps[1]=(int)(((heure/10000)-temps[0])*100);
-   temps[2]=((((heure/10000)-temps[0])*100)-temps[1])*100;
+
+   if(decimal == 1){
+      temps[0]=((int)heure/10000);
+      temps[1]=(int)(((heure/10000)-temps[0])*100);
+      temps[2]=((((heure/10000)-temps[0])*100)-temps[1])*100;
+
+   }else{
+      temps[0]=((int)heure/100);
+      temps[1]=(int)(((heure/100)-temps[0])*100);
+      temps[2]=((((heure/100)-temps[0])*100)-temps[1])*100;
+   }
 }
 
 double init_long_or_lat(char* longitude, char lon){
